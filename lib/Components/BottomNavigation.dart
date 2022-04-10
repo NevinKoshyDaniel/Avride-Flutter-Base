@@ -6,15 +6,13 @@
 
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-
-
-
 import 'package:ava/Pages/Location.dart';
 
 import 'package:flutter/material.dart';
 import '../Pages/Home.dart';
 import '../Pages/ProfilePage.dart';
 import '../Pages/SavePage.dart';
+import '../Pages/nftPage.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -24,16 +22,17 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _currentIndex = 0;// this will be set when a new tab is tapped
+  int _currentIndex = 0; // this will be set when a new tab is tapped
   // this is the list of screens in the app
   // this list should be in the same order of the b-navigation bar icons are place
   //Because it depends on the index/position number of the b-navigation bar
   final List<Widget> _tabs = [
     //all the are various page in the app
-    Explore(),//screen-1
-    SavePage(),//screen-2
-    Location(),//screen-3
-    ProfilePage(),//screen-4
+    Explore(), //screen-1
+    SavePage(), //screen-2
+    Location(), //screen-3
+    ProfilePage(), //screen-4
+    NftPage(),
   ];
   // this is the function of ontap
   void _onItemTapped(int index) {
@@ -41,14 +40,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
       _currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // this appBar is fixed so it appear in all pages
       appBar: AppBar(
-        title: Text("ello",
+        title: Text(
+          "Avride",
           style: TextStyle(
-            fontFamily:'Charmonman',
+            fontFamily: 'Charmonman',
             color: Colors.blueAccent,
           ),
         ),
@@ -68,11 +69,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
         onTap: _onItemTapped,
         items: [
           BottomNavigationBarItem(
-            icon:  Icon(Icons.home_filled),
+            icon: Icon(Icons.home_filled),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon:  Icon(Icons.save_alt_sharp),
+            icon: Icon(Icons.save_alt_sharp),
             label: 'Saved',
           ),
           BottomNavigationBarItem(
@@ -82,6 +83,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
             label: 'Account',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            label: 'NFT',
           )
         ],
       ),

@@ -3,9 +3,9 @@ import 'modal/user.dart';
 class UserPreferences {
   static const myUser = User(
     imagePath: '',
-    name: 'Sarah Abs',
-    email: 'sarah.abs@gmail.com',
+    name: 'Nev Dan',
+    email: 'Nev.dan@gmail.com',
     about:
-    'Certified Personal Trainer and Nutritionist with years of experience in creating effective diets and training plans focused on achieving individual customers goals in a smooth way.',
+    'Enthusiastic user of the app created for the purpose of testing the app. The entire data collection right know is a dummy data set and we will be updating it to the original standards as time passes.',
   );
 }
